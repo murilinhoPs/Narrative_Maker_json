@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="stylesheet" type="text/css" href="./global.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../src/components/forms/styles.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/b70210cb87.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Electron App</title>
+  </head>
+  <body>
+    <h1 id="page_title">Hello Electron 2</h1>
+
+    <form name="json_form" id="json_form">
+      <h2>Criar modelo</h2>
+
+      <div class="input_group">
+        <div class="input_block_group">
+          <label for="json_id">Id:</label>
+          <input
+            type="number"
+            id="json_id"
+            placeholder="Id number"
+            required="required"
+          />
+        </div>
+        <div class="input_block_group">
+          <label for="json_next_text">Next Id:</label>
+          <input
+            type="number"
+            id="json_next_text"
+            placeholder="Next Id number"
+            required="required"
+          />
+        </div>
+      </div>
+
+      <div class="input_block">
+        <label for="json_title">Title:</label>
+        <input
+          type="text"
+          id="json_title"
+          placeholder="Title"
+          required="required"
+        />
+      </div>
+
+      <div class="input_block">
+        <label for="json_description">Description:</label>
+        <textarea
+          placeholder="Description..."
+          id="json_description"
+          cols="40"
+          rows="5"
+        ></textarea>
+      </div>
+
+      <div class="input_buttons">
+        <input
+          id="mybutton"
+          type="submit"
+          class="save"
+          onclick=""
+          value="+"
+        />
+      </div>
+    </form>
+  </body>
+
+  <script src="../src/components/forms/index.js"></script>
+  <script src="../src/services/download.js"></script>
+</html>

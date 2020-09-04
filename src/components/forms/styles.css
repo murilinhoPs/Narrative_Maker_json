@@ -1,0 +1,81 @@
+#json_form {
+  background-color: rgb(194, 194, 194);
+  max-width: 500px;
+  padding-top: 20px;
+  padding-right: 15px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+#json_form h2 {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  color: #8322dd;
+}
+
+#json_form input,
+textarea {
+  width: 200px;
+  padding: 10px;
+  color: black;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+#json_form input:focus,
+textarea:focus {
+  border: 3px solid #8322dd;
+  color: black;
+}
+
+#json_form textarea {
+  width: 450px;
+  min-width: 450px;
+  min-height: 30px;
+  height: 100px;
+  line-height: 20px;
+  max-width: 450px;
+}
+
+#json_form label {
+  margin-left: 20px;
+  color: #8322dd;
+  font-weight: bold;
+}
+
+#json_form .save {
+  background-color: #8322dd;
+  height: 40px;
+  width: 100px;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 20px;
+  color: #fff;
+}
+
+#json_form .input_group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#json_form .input_block,
+.input_block_group {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+#json_form .input_block_group input {
+  width: 150px;
+}
+#json_form .input_block input {
+  width: 90%;
+}
+
+#json_form #mybutton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
