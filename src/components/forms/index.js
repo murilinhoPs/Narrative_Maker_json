@@ -1,6 +1,4 @@
-document
-  .getElementById('mybutton')
-  .addEventListener('click', getData);
+// document.getElementById('add').addEventListener('click', CreateField);
 
 function getData() {
   var nome = document.getElementById('nomeid');
@@ -14,3 +12,20 @@ function getData() {
     });
   }
 }
+
+let counter = 0;
+
+function CreateField() {
+  counter++;
+
+  var newField = document
+    .getElementById('json_form_read')
+    .cloneNode(true);
+
+  newField.style.display = 'block';
+
+  var insert_here = document.getElementById('insert_here');
+  insert_here.parentNode.insertBefore(newField, insert_here);
+}
+
+window.onload = CreateField;

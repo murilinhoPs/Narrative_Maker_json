@@ -1,10 +1,14 @@
 #json_form {
-  background-color: rgb(194, 194, 194);
+  padding-right: 15px;
+  margin: 5px;
+}
+#json_form_read {
+  padding-top: 15px;
+  margin-top: 50px;
   max-width: 500px;
-  padding-top: 20px;
   padding-right: 15px;
   border-radius: 20px;
-  margin: 10px;
+  background-color: rgb(194, 194, 194);
 }
 
 #json_form h2 {
@@ -74,8 +78,9 @@ textarea:focus {
   width: 90%;
 }
 
-#json_form #mybutton {
+#json_form #add {
   width: 50px;
   height: 50px;
   border-radius: 50px;
+  border: none;
 }
