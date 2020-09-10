@@ -84,3 +84,7 @@ textarea:focus {
   border-radius: 50px;
   border: none;
 }
+
+.collapsible_content {
+  display: none;
+}
