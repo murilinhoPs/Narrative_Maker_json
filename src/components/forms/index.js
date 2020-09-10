@@ -1,4 +1,5 @@
 // document.getElementById('add').addEventListener('click', CreateField);
+const collapse = require('../src/components/collapisible/index.js');
 
 function getData() {
   var nome = document.getElementById('nomeid');
@@ -27,33 +28,8 @@ function CreateField() {
   var insert_here = document.getElementById('insert_here');
   insert_here.parentNode.insertBefore(newField, insert_here);
 
-  // GetCollapsibles();
+  //GetCollapsibles();
+  collapse();
 }
 
 window.onload = CreateField;
-
-// function GetCollapsibles() {
-let collapisible = document.getElementsByClassName('collapsible');
-var i;
-// console.log(collapisible);
-
-for (i = 0; i < collapisible.length; i++) {
-  var button = collapisible[i].firstElementChild;
-  console.log(button);
-
-  var collContent = collapisible[i].nextElementSibling;
-
-  button.addEventListener('click', () => {
-    console.log('Teste');
-
-    if (collContent.style.display === 'block') {
-      collContent.style.display = 'none';
-    } else collContent.style.display = 'block';
-  });
-}
-
-// function showOrHide(collContent) {
-//   console.log('Teste');
-// }
-
-// }

@@ -1,1 +1,1 @@
-process.once('loaded', () => console.log('App started'));
+// process.once('loaded', () => console.log('App started'));
