@@ -1,0 +1,27 @@
+.collapsible {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 23px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+}
+
+.collapsible button {
+  border: none;
+  border-radius: 30px;
+  padding-right: 5px;
+  padding-left: 5px;
+  background-color: #8322dd;
+  color: #fff;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+}
+
+.collapsible button:hover {
+  background-color: #591f8fc4;
+  color: rgba(255, 255, 255, 0.849);
+  cursor: pointer;
+}

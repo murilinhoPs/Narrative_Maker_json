@@ -1,19 +1,22 @@
 #json_form {
-  padding-right: 15px;
+  padding-right: 20px;
   margin: 5px;
+  min-width: 400px;
 }
 #json_form_read {
-  padding-top: 15px;
+  padding-top: 20px;
   margin-top: 50px;
+  margin-bottom: 10px;
   max-width: 500px;
-  padding-right: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
   border-radius: 20px;
   background-color: rgb(194, 194, 194);
+  padding-bottom: 5px;
+  padding:0px;
 }
 
 #json_form h2 {
-  margin-bottom: 20px;
-  margin-left: 20px;
   color: #8322dd;
 }
 
@@ -26,6 +29,7 @@ textarea {
   margin-top: 10px;
   border-radius: 10px;
   border: none;
+  height: 15px;
 }
 
 #json_form input:focus,
@@ -35,28 +39,19 @@ textarea:focus {
 }
 
 #json_form textarea {
-  width: 450px;
-  min-width: 450px;
-  min-height: 30px;
+  width: 90%;
+  min-height: 40px;
   height: 100px;
   line-height: 20px;
-  max-width: 450px;
+  max-width: 400px;
+  resize: vertical;
+  height: 10px;
 }
 
 #json_form label {
   margin-left: 20px;
   color: #8322dd;
   font-weight: bold;
-}
-
-#json_form .save {
-  background-color: #8322dd;
-  height: 40px;
-  width: 100px;
-  font-weight: bold;
-  border-radius: 10px;
-  margin: 20px;
-  color: #fff;
 }
 
 #json_form .input_group {
@@ -66,25 +61,39 @@ textarea:focus {
 }
 
 #json_form .input_block,
-.input_block_group {
-  margin-top: 10px;
+.input_block_num {
+  margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
-#json_form .input_block_group input {
+#json_form .input_block_num input {
   width: 150px;
 }
 #json_form .input_block input {
   width: 90%;
 }
 
-#json_form #add {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  border: none;
+.choices{
 }
 
-.collapsible_content {
-  display: none;
+.choice_block{
+  background-color: rgba(255, 255, 255, 0.37);
+}
+
+.add_card {
+  background-color: #8322dd;
+  font-weight: bold;
+  margin: 20px;
+  color: #fff;
+  font-size: 23px;
+  width: 140px;
+  height: 45px;
+  border-radius: 30px;
+  border: none;
+}
+.add_card:hover {
+  background-color: #591f8fc4;
+  color: rgba(255, 255, 255, 0.849);
+  cursor: pointer;
 }

@@ -1,15 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu");
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu');
 
 body {
   background-color: rgb(70, 70, 70);
   color: aliceblue;
   padding: 30px;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
 }
 
 * {
   margin: 0;
   padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #8322dd;
 }
 
 input,
@@ -17,7 +25,7 @@ button,
 textarea {
   font-size: 1.2rem;
   font-weight: 400;
-  font-family: "Ubuntu";
+  font-family: 'Ubuntu';
 }
 
 :not(input):not(textarea),

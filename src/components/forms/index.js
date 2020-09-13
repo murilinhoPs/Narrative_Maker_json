@@ -2,16 +2,18 @@
 const collapse = require('../src/components/collapisible/index.js');
 
 function getData() {
-  var nome = document.getElementById('nomeid');
+  var nome = new FormData(document.getElementById('json_form'));
 
-  if (nome.value != '') {
-    alert({
-      id: 0,
-      nextId: 1,
-      title: '',
-      description: '',
-    });
-  }
+  console.log(nome.getAll());
+
+  // if (nome.value != '') {
+  //   alert({
+  //     id: 0,
+  //     nextId: 1,
+  //     title: '',
+  //     description: '',
+  //   });
+  // }
 }
 
 let counter = 0;

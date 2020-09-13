@@ -2,21 +2,22 @@ function GetCollapsibles() {
   let collapisible = document.getElementsByClassName('collapsible');
 
   for (let collapisibleElm of collapisible) {
-    let button = collapisibleElm.firstElementChild;
-
     let collContent = collapisibleElm.nextElementSibling;
+
+    let button = collapisibleElm.firstElementChild;
+    // button.textContent = '-';
 
     button.onclick = () => {
       console.log(`Change display: ${collContent.style.display}`);
 
       if (collContent.style.display === 'block') {
+        button.textContent = '+';
         collContent.style.display = 'none';
-      } else collContent.style.display = 'block';
+      } else {
+        collContent.style.display = 'block';
+        button.textContent = '-';
+      }
     };
-
-    // button.addEventListener('click', function () {
-    //   console.log('New click event');
-    // });
   }
 }
 

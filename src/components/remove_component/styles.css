@@ -1,0 +1,27 @@
+#remove_btn {
+  display: flex;
+  justify-content: center;
+
+  background-color: #dd2251;
+  color: #fff;
+
+  border: none;
+  border-radius: 30px;
+
+  font-size: 22px;
+  padding-top: 2.3px;
+  width: 33px;
+  height: 33px;
+
+  position: relative;
+  top: -30px;
+  left: 20px;
+  margin:20px;
+  margin: -5px 360px -40px;
+}
+
+#remove_btn:hover {
+  background-color: #fa82a0f1;
+  color: rgba(255, 255, 255, 0.849);
+  cursor: pointer;
+}
