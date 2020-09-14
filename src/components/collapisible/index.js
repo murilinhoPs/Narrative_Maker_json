@@ -5,7 +5,6 @@ function GetCollapsibles() {
     let collContent = collapisibleElm.nextElementSibling;
 
     let button = collapisibleElm.firstElementChild;
-    // button.textContent = '-';
 
     button.onclick = () => {
       console.log(`Change display: ${collContent.style.display}`);

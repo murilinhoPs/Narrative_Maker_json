@@ -1,8 +1,15 @@
-var btn = document.getElementById('remove_btn');
+var btn = document.getElementsByClassName('remove_btn');
 
-btn.onclick = function () {
-  console.log('remove button');
-  this.nextElementSibling.remove();
+function AddOnClick() {
+  for (let btnElm of btn) {
+    btnElm.addEventListener('click', RemoveElm);
+  }
+}
 
-  this.remove();
-};
+function RemoveElm() {
+  let parentElm = this.parentElement;
+
+  parentElm.parentNode.removeChild(parentElm);
+}
+
+module.exports = AddOnClick;

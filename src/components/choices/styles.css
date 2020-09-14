@@ -1,0 +1,20 @@
+.choice_block {
+  padding-top: 14px;
+  background-color: rgba(255, 255, 255, 0.37);
+}
+.choice_block #coll_button_choice {
+  background-color: #c84ae7;
+}
+
+.add_choice {
+  margin: 14px 14px 20px;
+
+  background-color: #c84ae7;
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  border: none;
+}

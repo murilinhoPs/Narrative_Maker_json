@@ -8,16 +8,16 @@
   padding-bottom: 15px;
 }
 
-.collapsible button {
+.collapsible .coll_button {
   border: none;
   border-radius: 30px;
   padding-right: 5px;
   padding-left: 5px;
-  background-color: #8322dd;
-  color: #fff;
-  font-size: 30px;
   width: 40px;
   height: 40px;
+  font-size: 30px;
+  background-color: #8322dd;
+  color: #fff;
 }
 
 .collapsible button:hover {

@@ -1,7 +1,8 @@
 # Todo
 
-- Colapse element
-- Estilo do colapse
+- Colapse element: OK
+- Estilo do colapse: OK
+- Criar novas escolhas
 - Adicionar todas as informações no card
       - Estrutura do json
       - Adicionar mais escolhas

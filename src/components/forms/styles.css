@@ -2,7 +2,10 @@
   padding-right: 20px;
   margin: 5px;
   min-width: 400px;
+  display: flex;
+  flex-direction: column;
 }
+
 #json_form_read {
   padding-top: 20px;
   margin-top: 50px;
@@ -12,15 +15,14 @@
   padding-left: 10px;
   border-radius: 20px;
   background-color: rgb(194, 194, 194);
-  padding-bottom: 5px;
-  padding:0px;
+  /* padding: 0px; */
 }
 
-#json_form h2 {
+#json_form_read h2 {
   color: #8322dd;
 }
 
-#json_form input,
+#json_form_read input,
 textarea {
   width: 200px;
   padding: 10px;
@@ -32,13 +34,13 @@ textarea {
   height: 15px;
 }
 
-#json_form input:focus,
+#json_form_read input:focus,
 textarea:focus {
   border: 3px solid #8322dd;
   color: black;
 }
 
-#json_form textarea {
+#json_form_read textarea {
   width: 90%;
   min-height: 40px;
   height: 100px;
@@ -48,37 +50,30 @@ textarea:focus {
   height: 10px;
 }
 
-#json_form label {
+#json_form_read label {
   margin-left: 20px;
   color: #8322dd;
   font-weight: bold;
 }
 
-#json_form .input_group {
+#json_form_read .input_group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-#json_form .input_block,
+#json_form_read .input_block,
 .input_block_num {
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
-#json_form .input_block_num input {
+#json_form_read .input_block_num input {
   width: 150px;
 }
-#json_form .input_block input {
+#json_form_read .input_block input {
   width: 90%;
-}
-
-.choices{
-}
-
-.choice_block{
-  background-color: rgba(255, 255, 255, 0.37);
 }
 
 .add_card {

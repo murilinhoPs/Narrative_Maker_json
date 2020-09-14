@@ -19,10 +19,15 @@
       type="text/css"
       href="../src/components/collapisible/styles.css"
     />
-    <link 
-    rel="stylesheet"
-    type="text/css"
-    href="../src/components/remove_component/styles.css"
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../src/components/remove_component/styles.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../src/components/choices/styles.css"
     />
 
     <script
@@ -33,122 +38,112 @@
     <title>Electron App</title>
   </head>
   <body>
+    <h1 style="color: #fff" id="page_title">Título da história</h1>
+    <button id="mybutton" style="height: 20px; width: 20px"></button>
+
     <div
       name="json_form_read"
       id="json_form_read"
       style="display: none"
     >
-      <button type="submit" id="remove_btn">x</button>
+      <button class="remove_btn">x</button>
 
-      <span class="del_content">
-        <div class="collapsible">
-          <button type="button" class="coll_button" id="coll_button">
-            -
-          </button>
-          <h2 name="nome">1ª narrativa(resumo dela)</h2>
+      <div class="collapsible">
+        <button type="button" class="coll_button" id="coll_button">
+          -
+        </button>
+
+        <h2 name="nome">1ª narrativa(resumo dela)</h2>
+      </div>
+
+      <div class="collapsible_content" style="display: block">
+        <div class="input_block_num">
+          <label for="json_id">Id:</label>
+          <input type="number" id="json_id" placeholder="Id number" />
         </div>
 
-        <div class="collapsible_content" style="display: block">
-          <div class="input_block_num">
-            <label for="json_id">Id:</label>
-            <input
-              type="number"
-              id="json_id"
-              placeholder="Id number"
-            />
-          </div>
+        <div class="input_block" name="campo">
+          <label>Narrativa:</label>
+          <textarea
+            placeholder="Narrador..."
+            id="json_narrative"
+            cols="40"
+            rows="6"
+          ></textarea>
+        </div>
 
-          <div class="input_block" name="campo">
-            <label>Narrativa:</label>
-            <textarea
-              placeholder="Narrador..."
-              id="json_narrative"
-              cols="40"
-              rows="6"
-            ></textarea>
-          </div>
+        <span class="choices">
+          <h2>Escolhas[</h2>
 
-          <span class="choices">
-            <h2>Escolhas[</h2>
-
-            <div class="choice_block">
-              <div class="collapsible">
-                <button
-                  type="button"
-                  class="coll_button"
-                  id="coll_button"
-                >
-                  -
-                </button>
-                <h3 name="nome">1(index)</h3>
-              </div>
-
-              <span
-                class="collapsible_content"
-                style="display: block"
+          <div class="choice_block">
+            <div class="collapsible">
+              <button
+                type="button"
+                class="coll_button"
+                id="coll_button_choice"
               >
-                <div class="input_group">
-                  <div class="input_block_num">
-                    <label for="json_id">Index:</label>
-                    <input
-                      type="number"
-                      id="json_id"
-                      placeholder="This Id"
-                    />
-                  </div>
+                +
+              </button>
+              <h3 name="nome">Escolha 1(index)</h3>
+            </div>
 
-                  <div class="input_block_num">
-                    <label for="json_next_text">Pŕoximo Index:</label>
-                    <input
-                      type="number"
-                      id="json_next_text"
-                      placeholder="next choice"
-                    />
-                  </div>
-                </div>
-
-                <div class="input_block" name="campo">
-                  <label>Escolha:</label>
+            <span class="collapsible_content" style="display: none">
+              <div class="input_group">
+                <div class="input_block_num">
+                  <label for="json_id">Index:</label>
                   <input
-                    type="text"
-                    id="json_narrative"
-                    placeholder="narrativa da escolha"
+                    type="number"
+                    id="json_id"
+                    placeholder="This Id"
                   />
                 </div>
-              </span>
-            </div>
-          </span>
 
-          <div class="input_buttons" name="botoes">
-            <button
-              type="button"
-              class="add_choice"
-              onclick="CreateField()"
-            >
-              + Escolha
-            </button>
+                <div class="input_block_num">
+                  <label for="json_next_text">Pŕoximo Index:</label>
+                  <input
+                    type="number"
+                    id="json_next_text"
+                    placeholder="next choice"
+                  />
+                </div>
+              </div>
+
+              <div class="input_block" name="campo">
+                <label>Escolha:</label>
+                <input
+                  type="text"
+                  id="json_narrative"
+                  placeholder="narrativa da escolha"
+                />
+              </div>
+            </span>
           </div>
+        </span>
+
+        <div class="input_buttons" name="botoes">
+          <button
+            type="button"
+            class="add_choice"
+            onclick="CreateChoiceField()"
+          >
+            + Escolha
+          </button>
         </div>
-      </span>
+      </div>
     </div>
 
-    <form enctype="application/json" name="json_form" id="json_form">
-      <h1 style="color: #fff" id="page_title">Título da história</h1>
-      <button
-        id="mybutton"
-        style="height: 20px; width: 20px"
-      ></button>
-
+    <div name="json_form" id="json_form">
       <div id="insert_here"></div>
+    </div>
 
-      <button type="button" class="add_card" onclick="CreateField()">
-        Adicionar +
-      </button>
-    </form>
+    <button class="add_card" onclick="CreateNarrativeField()">
+      Adicionar +
+    </button>
   </body>
 
   <script src="../src/components/forms/index.js"></script>
   <script src="../src/components/collapisible/index.js"></script>
   <script src="../src/components/remove_component/index.js"></script>
+  <script src="../src/components/choices/index.js"></script>
   <script src="../src/services/download.js"></script>
 </html>

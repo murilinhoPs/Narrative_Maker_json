@@ -1,5 +1,6 @@
 // document.getElementById('add').addEventListener('click', CreateField);
 const collapse = require('../src/components/collapisible/index.js');
+const updateButton = require('../src/components/remove_component/index.js');
 
 function getData() {
   var nome = new FormData(document.getElementById('json_form'));
@@ -18,7 +19,7 @@ function getData() {
 
 let counter = 0;
 
-function CreateField() {
+function CreateNarrativeField() {
   counter++;
 
   var newField = document
@@ -30,8 +31,8 @@ function CreateField() {
   var insert_here = document.getElementById('insert_here');
   insert_here.parentNode.insertBefore(newField, insert_here);
 
-  //GetCollapsibles();
   collapse();
+  updateButton();
 }
 
-window.onload = CreateField;
+window.onload = CreateNarrativeField;
