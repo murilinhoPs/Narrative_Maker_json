@@ -41,14 +41,8 @@ function RenameNodes(newFields) {
   for (let field of newFields.childNodes) {
     var theName = field.id;
 
-    if (theName !== undefined) {
+    if (theName) {
       field.id = theName + narrativeCounter;
-    }
-
-    if (field.id === 'collapsible_content_' + narrativeCounter) {
-      console.log(field); //[5].childNodes);
-
-      console.log(field.childNodes[5].childNodes);
     }
   }
 }

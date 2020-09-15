@@ -1,17 +1,25 @@
-function CreateNewChoice(newFieldId, insertPos) {
-  let newFields = document.getElementsByClassName(newFieldId);
+const collapseFun = require('../src/components/collapisible/index.js');
 
-  //.cloneNode(true);
-  let inserts_here = document.getElementsByClassName(insertPos);
+var choice_block; //= choicesNodes[3];
+var insert_choice; //= choicesNodes[7];
 
-  for (let newField of newFields) {
-    // btnElm.addEventListener('click', RemoveElm);
+function CreateNewChoice(elm) {
+  var elmT = document.getElementById('choice_block');
+
+  console.log(elm.parentNode);
+
+  var choicesNodes = elm.parentNode.childNodes;
+
+  for (let childNode of choicesNodes) {
+    if (childNode.id === 'choice_block') {
+      choice_block = childNode;
+    } else if (childNode.id === 'insert_choice')
+      insert_choice = childNode;
   }
 
-  console.log(newFields);
-  console.log(inserts_here);
+  var newChoice = choice_block.cloneNode(true);
 
-  // newField.style.display = 'block';
+  insert_choice.parentNode.insertBefore(newChoice, insert_choice);
 
-  // insert_here.parentNode.insertBefore(newField, insert_here);
+  collapseFun();
 }

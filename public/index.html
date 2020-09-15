@@ -73,13 +73,22 @@
         </div>
 
         <div class="choices">
-          <h2>Escolhas[</h2>
+          <div class="collapsible">
+            <button
+              type="button"
+              class="coll_button"
+              id="coll_button"
+            >
+              -
+            </button>
+            <h3 name="nome">Escolhas []</h3>
+          </div>
 
           <section
             id="choice_block"
             name="choice_block_"
             class="choice_block"
-            ]
+            style="display: block"
           >
             <div class="collapsible">
               <button
@@ -124,18 +133,9 @@
             </span>
           </section>
 
-          <div
-            id="insert_choice"
-            class="insert_choice"
-            name="insert_choice_"
-          ></div>
-        </div>
+          <div id="insert_choice" class="insert_choice"></div>
 
-        <div class="input_buttons" name="botoes">
-          <button
-            class="add_choice"
-            onclick="CreateNewCard('choice_block', 'insert_choice')"
-          >
+          <button class="add_choice" onclick="CreateNewChoice(this)">
             + Escolha
           </button>
         </div>
