@@ -18,3 +18,9 @@
   border-radius: 30px;
   border: none;
 }
+
+.add_choice:hover {
+  background-color: #dd77f6e1;
+  color: rgba(255, 255, 255, 0.781);
+  cursor: pointer;
+}

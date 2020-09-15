@@ -41,28 +41,28 @@
     <h1 style="color: #fff" id="page_title">Título da história</h1>
     <button id="mybutton" style="height: 20px; width: 20px"></button>
 
-    <div
-      name="json_form_read"
-      id="json_form_read"
-      style="display: none"
-    >
-      <button class="remove_btn">x</button>
+    <div id="json_form_read" style="display: none">
+      <button name="remove_button" class="remove_btn">x</button>
 
       <div class="collapsible">
         <button type="button" class="coll_button" id="coll_button">
           -
         </button>
 
-        <h2 name="nome">1ª narrativa(resumo dela)</h2>
+        <h2>1ª narrativa(resumo dela)</h2>
       </div>
 
-      <div class="collapsible_content" style="display: block">
+      <div
+        id="collapsible_content_"
+        class="collapsible_content"
+        style="display: block"
+      >
         <div class="input_block_num">
           <label for="json_id">Id:</label>
           <input type="number" id="json_id" placeholder="Id number" />
         </div>
 
-        <div class="input_block" name="campo">
+        <div class="input_block">
           <label>Narrativa:</label>
           <textarea
             placeholder="Narrador..."
@@ -72,10 +72,15 @@
           ></textarea>
         </div>
 
-        <span class="choices">
+        <div class="choices">
           <h2>Escolhas[</h2>
 
-          <div class="choice_block">
+          <section
+            id="choice_block"
+            name="choice_block_"
+            class="choice_block"
+            ]
+          >
             <div class="collapsible">
               <button
                 type="button"
@@ -117,14 +122,19 @@
                 />
               </div>
             </span>
-          </div>
-        </span>
+          </section>
+
+          <div
+            id="insert_choice"
+            class="insert_choice"
+            name="insert_choice_"
+          ></div>
+        </div>
 
         <div class="input_buttons" name="botoes">
           <button
-            type="button"
             class="add_choice"
-            onclick="CreateChoiceField()"
+            onclick="CreateNewCard('choice_block', 'insert_choice')"
           >
             + Escolha
           </button>
@@ -132,11 +142,14 @@
       </div>
     </div>
 
-    <div name="json_form" id="json_form">
+    <div name="json_cards" id="json_cards">
       <div id="insert_here"></div>
     </div>
 
-    <button class="add_card" onclick="CreateNarrativeField()">
+    <button
+      class="add_card"
+      onclick="CreateNewCard('json_form_read', 'insert_here')"
+    >
       Adicionar +
     </button>
   </body>
