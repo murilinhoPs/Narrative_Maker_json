@@ -1,7 +1,4 @@
-// document.getElementById('add').addEventListener('click', CreateField);
-
 const collapse = require('../src/components/collapisible/index.js');
-const createChoice = require('../src/components/choices/index.js');
 const updateButton = require('../src/components/remove_component/index.js');
 
 function getData() {
@@ -20,16 +17,12 @@ function getData() {
 }
 
 let narrativeCounter = 0;
-let choiceCounter = 0;
 
 function CreateNewCard(newFieldId, insertPos) {
   narrativeCounter++;
-  // else choiceCounter++;
 
   var newField = document.getElementById(newFieldId).cloneNode(true);
   var insert_here = document.getElementById(insertPos);
-
-  // RenameNodes(newField);
 
   newField.style.display = 'block';
 
@@ -37,9 +30,6 @@ function CreateNewCard(newFieldId, insertPos) {
 
   collapse();
   updateButton();
-
-  // var btnAddChoice = document.getElementById('add_choice');
-  // // createChoice(btnAddChoice);
 }
 
 // function RenameNodes(newFields) {
