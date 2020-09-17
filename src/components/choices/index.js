@@ -1,14 +1,15 @@
-const collapseFun = require('../src/components/collapisible/index.js');
+// const collapseFun = require('../src/components/collapisible/index.js');
+// const updateRemButton = require('../src/components/remove_component/index.js');
 
-var choice_block; //= choicesNodes[3];
-var insert_choice; //= choicesNodes[7];
+var choice_block;
+var insert_choice;
 
 function CreateNewChoice(elm) {
-  var elmT = document.getElementById('choice_block');
+  // console.log(elm);
+  // var elmT = document.getElementById('choice_block');
+  var choicesNodes = elm.parentNode.childNodes[3].childNodes;
 
-  console.log(elm.parentNode);
-
-  var choicesNodes = elm.parentNode.childNodes;
+  console.log(choicesNodes);
 
   for (let childNode of choicesNodes) {
     if (childNode.id === 'choice_block') {
@@ -19,7 +20,14 @@ function CreateNewChoice(elm) {
 
   var newChoice = choice_block.cloneNode(true);
 
+  console.log(newChoice);
+  newChoice.style.display = 'block';
+
   insert_choice.parentNode.insertBefore(newChoice, insert_choice);
 
-  collapseFun();
+  // collapseFun();
+
+  // updateRemButton();
 }
+
+module.exports = CreateNewChoice;
