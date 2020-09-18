@@ -7,7 +7,6 @@ var insert_choice;
 
 function CreateNewChoice(elm) {
   choice_block = document.getElementById('choice_block');
-
   var choicesNodes = elm.parentNode.childNodes[3].childNodes;
 
   for (let childNode of choicesNodes) {

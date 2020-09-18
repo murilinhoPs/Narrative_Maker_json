@@ -11,12 +11,40 @@ function GetCollapsibles() {
 
       if (collContent.style.display === 'block') {
         button.textContent = '+';
+
+        collapisibleElm.style.borderBottom = '3px solid #c84ae7';
+
         collContent.style.display = 'none';
       } else {
         collContent.style.display = 'block';
+
+        collapisibleElm.style.borderBottom = 'none';
+
         button.textContent = '-';
       }
     };
+  }
+}
+
+function ShowCollapsibleContent(elm) {
+  let collContent = elm.nextElementSibling;
+
+  let button = elm.firstElementChild;
+
+  console.log(`Change display: ${collContent.style.display}`);
+
+  if (collContent.style.display === 'block') {
+    button.textContent = '+';
+
+    collapisibleElm.style.borderBottom = '3px solid #c84ae7';
+
+    collContent.style.display = 'none';
+  } else {
+    collContent.style.display = 'block';
+
+    collapisibleElm.style.borderBottom = 'none';
+
+    button.textContent = '-';
   }
 }
 
