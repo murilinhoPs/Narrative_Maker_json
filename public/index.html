@@ -41,8 +41,19 @@
     <h1 style="color: #fff" id="page_title">Título da história</h1>
     <button id="mybutton" style="height: 20px; width: 20px"></button>
 
-    <form id="json_form_read" style="display: none">
+    <form
+      class="json_form_read"
+      id="json_form_read"
+      style="display: none"
+    >
       <button name="remove_button" class="remove_btn">x</button>
+
+      <label for="test_id">Enter nada:</label>
+      <input
+        id="test_id"
+        name="test_id"
+        placeholder="Id placeholder"
+      />
 
       <div class="collapsible">
         <button type="button" class="coll_button" id="coll_button">
@@ -58,10 +69,10 @@
         style="display: block"
       >
         <div class="input_block_num">
-          <label for="json_id">Id:</label>
+          <label id="json_id" for="json_id">Id:</label>
           <input
-            type="number"
             name="narrative_id"
+            type="number"
             id="json_id"
             placeholder="Id number"
           />
@@ -70,6 +81,7 @@
         <div class="input_block">
           <label>Narrativa:</label>
           <textarea
+            name="narrative_write"
             placeholder="Narrador..."
             id="json_narrative"
             cols="40"
@@ -115,6 +127,7 @@
                   <div class="input_block_num">
                     <label for="json_id">Index:</label>
                     <input
+                      name="options[][index]"
                       type="number"
                       id="json_id"
                       placeholder="This Id"
@@ -151,18 +164,17 @@
             class="add_choice"
             onclick="CreateNewChoice(this)"
           >
+            <!-- onclick="CreateNewChoice(this)" -->
+
             + Escolha
           </button>
         </div>
+
+        <button onclick="GetFormData(event)">FormToJson</button>
       </div>
     </form>
 
-    <form
-      enctype="application/json"
-      name="json_cards"
-      id="json_cards"
-      method="POST"
-    >
+    <form name="json_cards" id="json_cards">
       <div id="insert_here"></div>
     </form>
 
@@ -178,6 +190,6 @@
   <script src="../src/components/collapisible/index.js"></script>
   <script src="../src/components/remove_component/index.js"></script>
   <script src="../src/components/choices/index.js"></script>
-  <script src="../src/services/download.js"></script>
-  <script src="../src/utils/constants.js"></script>
+  <!-- <script src="../src/services/download.js"></script> -->
+  <script src="../src/utils/saveJson.js"></script>
 </html>
