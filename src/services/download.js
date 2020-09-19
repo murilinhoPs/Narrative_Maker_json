@@ -2,20 +2,17 @@
 const fs = require('fs');
 const electron = require('electron');
 const path = require('path');
-
 const { dialog } = electron.remote;
-
-const data = {
-  id: 0,
-  nextId: 1,
-  title: '',
-  description: '',
-};
-const jsonData = JSON.stringify(data);
+const getFormData = require('../src/utils/saveJson.js');
 
 document
   .getElementById('mybutton')
-  .addEventListener('click', async () => {
+  .addEventListener('click', async (event) => {
+    var adventureData = getFormData(event);
+
+    const jsonData = JSON.stringify(adventureData);
+    console.log(jsonData);
+
     const file = await dialog.showSaveDialog({
       title: 'Save',
       defaultPath: path.join(__dirname, '../assets/arquivo'),
@@ -30,7 +27,6 @@ document
     fs.writeFile(file.filePath + '.json', jsonData, (err) => {
       if (err) {
         alert('Error while saving');
-
         return;
       }
       file.canceled

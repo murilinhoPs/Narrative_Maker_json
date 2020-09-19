@@ -1,0 +1,9 @@
+{
+  "firstAdventure": [
+    {
+      "id": 1,
+      "text": "",
+      "options": [{ "index": 0, "nextText": "", "text": "" }]
+    }
+  ]
+}

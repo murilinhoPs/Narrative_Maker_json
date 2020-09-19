@@ -11,18 +11,17 @@
   margin-top: 50px;
   margin-bottom: 10px;
   max-width: 500px;
-  padding-right: 10px;
+  padding-right: 20px;
   padding-left: 10px;
   border-radius: 20px;
   background-color: rgb(194, 194, 194);
-  /* padding: 0px; */
 }
 
-#json_form_read h2 {
+.collapsible_content h2 {
   color: #8322dd;
 }
 
-#json_form_read input,
+.collapsible_content input,
 textarea {
   width: 200px;
   padding: 10px;
@@ -34,45 +33,57 @@ textarea {
   height: 15px;
 }
 
-#json_form_read input:focus,
+.collapsible_content input[type='number']::-webkit-inner-spin-button {
+  opacity: 0.5;
+}
+
+.collapsible_content input:focus,
 textarea:focus {
   border: 3px solid #8322dd;
   color: black;
 }
 
-#json_form_read textarea {
+.collapsible_content textarea {
   width: 90%;
   min-height: 40px;
   height: 100px;
   line-height: 20px;
-  max-width: 400px;
+  max-width: 350px;
   resize: vertical;
   height: 10px;
 }
 
-#json_form_read label {
+.collapsible_content label {
   margin-left: 20px;
   color: #8322dd;
   font-weight: bold;
 }
 
-#json_form_read .input_group {
+.input_group {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-right: 15px;
 }
 
-#json_form_read .input_block,
+.input_block,
 .input_block_num {
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
 }
-#json_form_read .input_block_num input {
-  width: 150px;
+
+.input_block {
+  margin-right: 20px;
 }
-#json_form_read .input_block input {
+
+.input_block_num input {
+  padding-right: 20px;
+
+  width: 120px;
+}
+.collapsible_content .input_block input {
   width: 90%;
 }
 
@@ -91,4 +102,24 @@ textarea:focus {
   background-color: #591f8fc4;
   color: rgba(255, 255, 255, 0.849);
   cursor: pointer;
+}
+
+#title_input {
+  background: none;
+  width: 48vw;
+  color: rgb(54, 54, 54);
+  margin-left: 20px;
+  margin-top: 15px;
+  border: none;
+  padding-bottom: 7px;
+  border-bottom: 1.5px solid rgb(68, 68, 68);
+  height: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+}
+
+#title_input:focus {
+  border-bottom: 3.5px solid #8322dd;
+  color: black;
 }

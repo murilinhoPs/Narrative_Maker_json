@@ -1,21 +1,25 @@
 const $ = require('jquery');
 const serializeJSON = require('jquery-serializejson');
 
-const data = {
-  id: 0,
-  nextId: 1,
-  title: '',
-  description: '',
+const AdventureData = {
+  firstAdventure: [],
 };
 
-function GetFormData(e) {
-  e.preventDefault();
+function GetFormData(event) {
+  AdventureData.firstAdventure = [];
+  event.preventDefault();
 
   var formsArray = document.querySelectorAll('#json_form_read');
 
-  var selectedForm = $(formsArray[1]);
+  for (var form of formsArray) {
+    var formToJson = $(form).serializeJSON();
 
-  var formToJson = selectedForm.serializeJSON();
+    AdventureData.firstAdventure.push(formToJson);
+  }
 
-  console.log(formToJson);
+  AdventureData.firstAdventure.splice(0, 1);
+
+  return AdventureData;
 }
+
+module.exports = GetFormData;

@@ -38,7 +38,7 @@
     <title>Electron App</title>
   </head>
   <body>
-    <h1 style="color: #fff" id="page_title">Título da história</h1>
+    <h1 style="color: #fff" id="page_title">Escreva sua narrativa</h1>
     <button id="mybutton" style="height: 20px; width: 20px"></button>
 
     <form
@@ -48,19 +48,11 @@
     >
       <button name="remove_button" class="remove_btn">x</button>
 
-      <label for="test_id">Enter nada:</label>
-      <input
-        id="test_id"
-        name="test_id"
-        placeholder="Id placeholder"
-      />
-
-      <div class="collapsible">
+      <div id="coll_title" class="collapsible">
         <button type="button" class="coll_button" id="coll_button">
           -
         </button>
-
-        <h2>1ª narrativa(resumo dela)</h2>
+        <input id="title_input" placeholder="Nomeie essa narrativa" />
       </div>
 
       <div
@@ -71,7 +63,7 @@
         <div class="input_block_num">
           <label id="json_id" for="json_id">Id:</label>
           <input
-            name="narrative_id"
+            name="id:number"
             type="number"
             id="json_id"
             placeholder="Id number"
@@ -81,7 +73,7 @@
         <div class="input_block">
           <label>Narrativa:</label>
           <textarea
-            name="narrative_write"
+            name="text"
             placeholder="Narrador..."
             id="json_narrative"
             cols="40"
@@ -90,7 +82,7 @@
         </div>
 
         <div class="choices">
-          <div class="collapsible">
+          <div id="coll_choices" class="collapsible">
             <button
               type="button"
               class="coll_button"
@@ -127,7 +119,7 @@
                   <div class="input_block_num">
                     <label for="json_id">Index:</label>
                     <input
-                      name="options[][index]"
+                      name="options[][index]:number"
                       type="number"
                       id="json_id"
                       placeholder="This Id"
@@ -137,6 +129,7 @@
                   <div class="input_block_num">
                     <label for="json_next_text">Pŕoximo Index:</label>
                     <input
+                      name="options[][nextText]"
                       type="number"
                       id="json_next_text"
                       placeholder="next choice"
@@ -146,11 +139,12 @@
 
                 <div class="input_block" name="campo">
                   <label>Escolha:</label>
-                  <input
+                  <textarea
+                    name="options[][text]"
                     type="text"
-                    id="json_narrative"
+                    id="narrative_choice"
                     placeholder="narrativa da escolha"
-                  />
+                  ></textarea>
                 </div>
               </span>
             </section>
@@ -164,13 +158,9 @@
             class="add_choice"
             onclick="CreateNewChoice(this)"
           >
-            <!-- onclick="CreateNewChoice(this)" -->
-
             + Escolha
           </button>
         </div>
-
-        <button onclick="GetFormData(event)">FormToJson</button>
       </div>
     </form>
 
@@ -190,6 +180,6 @@
   <script src="../src/components/collapisible/index.js"></script>
   <script src="../src/components/remove_component/index.js"></script>
   <script src="../src/components/choices/index.js"></script>
-  <!-- <script src="../src/services/download.js"></script> -->
+  <script src="../src/services/download.js"></script>
   <script src="../src/utils/saveJson.js"></script>
 </html>
