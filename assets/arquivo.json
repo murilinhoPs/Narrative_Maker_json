@@ -1,9 +1,21 @@
 {
   "firstAdventure": [
     {
+      "title": "Narrativa 1",
       "id": 1,
-      "text": "",
-      "options": [{ "index": 0, "nextText": "", "text": "" }]
+      "text": "Description of narrative 1",
+      "options": [
+        { "index": 0, "nextText": "2", "text": "Some text 1" }
+      ]
+    },
+    {
+      "title": "Narrative 2",
+      "id": 2,
+      "text": "Description of narrative 2",
+      "options": [
+        { "index": 0, "nextText": "3", "text": "Some Text 2" },
+        { "index": 1, "nextText": "4", "text": "Some Text 2.1" }
+      ]
     }
   ]
 }

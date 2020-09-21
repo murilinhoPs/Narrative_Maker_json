@@ -1,4 +1,4 @@
-const $ = require('jquery');
+var $ = require('jquery');
 const serializeJSON = require('jquery-serializejson');
 
 const AdventureData = {

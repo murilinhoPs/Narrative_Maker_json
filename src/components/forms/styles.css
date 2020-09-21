@@ -1,7 +1,7 @@
 #json_cards {
   padding-right: 20px;
   margin: 5px;
-  min-width: 400px;
+  min-width: 500px;
   display: flex;
   flex-direction: column;
 }
@@ -106,7 +106,7 @@ textarea:focus {
 
 #title_input {
   background: none;
-  width: 48vw;
+  min-width: 100px;
   color: rgb(54, 54, 54);
   margin-left: 20px;
   margin-top: 15px;
