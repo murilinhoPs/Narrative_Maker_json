@@ -7,14 +7,15 @@ function verifyInputKey(form, key) {
 }
 
 function myPopulate(form, data) {
-  $.each(data, function (key, value) {
-    console.log(key + ': ' + value);
+  if (form !== undefined)
+    $.each(data, function (key, value) {
+      console.log(key + ': ' + value);
 
-    var element =
-      form.elements.namedItem(key) || verifyInputKey(form, key);
+      var element =
+        form.elements.namedItem(key) || verifyInputKey(form, key);
 
-    element.value = value;
-  });
+      element.value = value;
+    });
 }
 
 module.exports = myPopulate;

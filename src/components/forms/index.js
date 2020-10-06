@@ -4,7 +4,26 @@ var $ = require('jquery');
 var populate = require('populate.js');
 const myPopulate = require('../src/utils/jsonDataToForm');
 
-function getJsonData() {
+let narrativeCounter = 0;
+
+function CreateNewCard(newFieldId, insertPos) {
+  narrativeCounter++;
+
+  var newField = document.getElementById(newFieldId).cloneNode(true);
+  var insert_here = document.getElementById(insertPos);
+
+  newField.style.display = 'block';
+
+  insert_here.parentNode.insertBefore(newField, insert_here);
+
+  collapse();
+  updateButton();
+  populateFromJsonData();
+}
+
+window.onload = CreateNewCard('json_form_read', 'insert_here');
+
+function populateFromJsonData() {
   var data = {
     firstAdventure: [
       {
@@ -28,26 +47,10 @@ function getJsonData() {
   var formsArray = document.querySelectorAll('#json_form_read');
   console.log(formsArray);
 
-  for (var i = 0; i <= formsArray.length + 1; i++) {
-    myPopulate(formsArray[i], data.firstAdventure[i - 1]);
+  for (var i = 0; i <= formsArray.length; i++) {
+    if (i !== 0)
+      myPopulate(formsArray[i], data.firstAdventure[i - 1]);
   }
-}
-
-let narrativeCounter = 0;
-
-function CreateNewCard(newFieldId, insertPos) {
-  narrativeCounter++;
-
-  var newField = document.getElementById(newFieldId).cloneNode(true);
-  var insert_here = document.getElementById(insertPos);
-
-  newField.style.display = 'block';
-
-  insert_here.parentNode.insertBefore(newField, insert_here);
-
-  collapse();
-  updateButton();
-  getJsonData();
 }
 
 // function RenameNodes(newFields) {
@@ -59,5 +62,3 @@ function CreateNewCard(newFieldId, insertPos) {
 //     }
 //   }
 // }
-
-window.onload = CreateNewCard('json_form_read', 'insert_here');
