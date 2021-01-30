@@ -2,9 +2,9 @@ function GetCollapsibles() {
   let collapisible = document.getElementsByClassName('collapsible');
 
   for (let collapisibleElm of collapisible) {
-    let collContent = collapisibleElm.nextElementSibling;
+    const collContent = collapisibleElm.nextElementSibling;
 
-    let button = collapisibleElm.firstElementChild;
+    const button = collapisibleElm.firstElementChild;
 
     button.onclick = () => {
       console.log(`Change display: ${collContent.style.display}`);

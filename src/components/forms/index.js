@@ -9,8 +9,8 @@ let narrativeCounter = 0;
 function CreateNewCard(newFieldId, insertPos) {
   narrativeCounter++;
 
-  var newField = document.getElementById(newFieldId).cloneNode(true);
-  var insert_here = document.getElementById(insertPos);
+  const newField = document.getElementById(newFieldId).cloneNode(true);
+  const insert_here = document.getElementById(insertPos);
 
   newField.style.display = 'block';
 
@@ -24,7 +24,7 @@ function CreateNewCard(newFieldId, insertPos) {
 window.onload = CreateNewCard('json_form_read', 'insert_here');
 
 function populateFromJsonData() {
-  var data = {
+  const data = {
     firstAdventure: [
       {
         title: 'Narrativa 1',
@@ -44,12 +44,11 @@ function populateFromJsonData() {
     ],
   };
 
-  var formsArray = document.querySelectorAll('#json_form_read');
+  const formsArray = document.querySelectorAll('#json_form_read');
   console.log(formsArray);
 
-  for (var i = 0; i <= formsArray.length; i++) {
-    if (i !== 0)
-      myPopulate(formsArray[i], data.firstAdventure[i - 1]);
+  for (let i = 0; i <= formsArray.length; i++) {
+    if (i !== 0) myPopulate(formsArray[i], data.firstAdventure[i - 1]);
   }
 }
 

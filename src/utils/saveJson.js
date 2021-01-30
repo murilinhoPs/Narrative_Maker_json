@@ -9,10 +9,10 @@ function GetFormData(event) {
   AdventureData.firstAdventure = [];
   event.preventDefault();
 
-  var formsArray = document.querySelectorAll('#json_form_read');
+  const formsArray = document.querySelectorAll('#json_form_read');
 
-  for (var form of formsArray) {
-    var formToJson = $(form).serializeJSON();
+  for (let form of formsArray) {
+    let formToJson = $(form).serializeJSON();
 
     AdventureData.firstAdventure.push(formToJson);
   }

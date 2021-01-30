@@ -7,7 +7,7 @@ function AddOnClick() {
 }
 
 function RemoveElm() {
-  let parentElm = this.parentElement;
+  const parentElm = this.parentElement;
 
   parentElm.parentNode.removeChild(parentElm);
 }

@@ -1,7 +1,7 @@
 {
   "name": "electron_json_tool",
   "version": "1.0.0",
-  "description": "",
+  "description": "- ### An app I'm making with electron to help me to develop a mobile game, It's a game in Rpg-text style.  - #### This app will help me write the game narrative and will convert in json for my code can understand! - Screenshots are in assets/example",
   "main": "./src/index.js",
   "scripts": {
     "start": "electron .",
@@ -19,7 +19,15 @@
     "electron-reload": "^1.5.0",
     "electron-store": "^6.0.0",
     "jquery": "^3.5.1",
-    "jquery-serializejson": "^3.1.0",
+    "jquery-serializejson": "^3.2.0",
     "populate.js": "^1.2.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murilinhoPs/Narrative_Maker_json.git"
+  },
+  "bugs": {
+    "url": "https://github.com/murilinhoPs/Narrative_Maker_json/issues"
+  },
+  "homepage": "https://github.com/murilinhoPs/Narrative_Maker_json#readme"
 }

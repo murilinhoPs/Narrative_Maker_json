@@ -4,17 +4,9 @@ const path = require('path');
 const { app } = electron;
 const { BrowserWindow } = electron;
 
-require('electron-reload')(
-  [__dirname, path.join(__dirname, '../public')],
-  {
-    electron: path.join(
-      __dirname,
-      '../node_modules',
-      '.bin',
-      'electron'
-    ),
-  }
-);
+require('electron-reload')([__dirname, path.join(__dirname, '../public')], {
+  electron: path.join(__dirname, '../node_modules', '.bin', 'electron'),
+});
 
 let mainWindow;
 

@@ -11,8 +11,7 @@ function myPopulate(form, data) {
     $.each(data, function (key, value) {
       console.log(key + ': ' + value);
 
-      var element =
-        form.elements.namedItem(key) || verifyInputKey(form, key);
+      const element = form.elements.namedItem(key) || verifyInputKey(form, key);
 
       element.value = value;
     });

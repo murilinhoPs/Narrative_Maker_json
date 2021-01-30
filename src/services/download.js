@@ -5,32 +5,28 @@ const path = require('path');
 const { dialog } = electron.remote;
 const getFormData = require('../src/utils/saveJson.js');
 
-document
-  .getElementById('mybutton')
-  .addEventListener('click', async (event) => {
-    var adventureData = getFormData(event);
+document.getElementById('mybutton').addEventListener('click', async (event) => {
+  const adventureData = getFormData(event);
 
-    const jsonData = JSON.stringify(adventureData);
-    console.log(jsonData);
+  const jsonData = JSON.stringify(adventureData);
+  console.log(jsonData);
 
-    const file = await dialog.showSaveDialog({
-      title: 'Save',
-      defaultPath: path.join(__dirname, '../assets/arquivo'),
-      filters: [
-        {
-          name: 'JSON',
-          extensions: ['json'],
-        },
-      ],
-    });
-
-    fs.writeFile(file.filePath + '.json', jsonData, (err) => {
-      if (err) {
-        alert('Error while saving');
-        return;
-      }
-      file.canceled
-        ? alert('Operação cancelada')
-        : alert('Salvo com sucesso!');
-    });
+  const file = await dialog.showSaveDialog({
+    title: 'Save',
+    defaultPath: path.join(__dirname, '../assets/arquivo'),
+    filters: [
+      {
+        name: 'JSON',
+        extensions: ['json'],
+      },
+    ],
   });
+
+  fs.writeFile(file.filePath + '.json', jsonData, (error) => {
+    if (error) {
+      alert('Error while saving');
+      return;
+    }
+    file.canceled ? alert('Operação cancelada') : alert('Salvo com sucesso!');
+  });
+});
